@@ -6,3 +6,13 @@
   max-height: 400px;
   overflow: auto;
 }
+background{
+	
+}
+
+body{
+	background-image: url(http://training.health.ufl.edu/handouts/Templates/UF_background_orange_left_button.jpg);
+	background-position: right top;
+    background-attachment: fixed;
+    background-size: cover;
+}

@@ -35,10 +35,10 @@
                       * include a way to remove individual listings
 
                 --> 
-                <tr ng-repeat="listing in listings| filter:query" ng-click="showDetails($index)" >
+                <tr ng-repeat="listing in listings |filter:query" ng-click="showDetails(listing)" >
                 <td>{{listing.code}}</td>
                 <td>{{listing.name}}</td>
-                <td> <button ng-click="deleteListing($index)">remove</button></td>
+                <td> <button ng-click="deleteListing(listing)">remove</button></td>
                 </tr>
 
             </table>

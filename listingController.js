@@ -12,6 +12,7 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     $scope.addItem=false;
 
 
+
     $scope.addListing = function() {
     	$scope.listings.push({"code":$scope.listing.code, "name":$scope.listing.name,
     						"address":$scope.listing.address,
@@ -25,25 +26,25 @@ angular.module('listings').controller('ListingsController', ['$scope', 'Listings
     		$scope.addItem=!$scope.addItem;
     	};
 
-    $scope.deleteListing = function(index) {
-    	  $scope.listings.splice(index,1);
+    $scope.deleteListing = function(listing) {
+    	 $scope.listings.splice($scope.listings.indexOf(listing), 1);
     	  $scope.showInfo=false;
     };
-    $scope.showDetails = function(index) {
+    $scope.showDetails = function(listing) {
     	if(!$scope.showInfo)
     		$scope.showInfo=true;
 
-    	$scope.name=$scope.listings[index].name;
-    	$scope.code=$scope.listings[index].code;
+    	$scope.name=listing.name;
+    	$scope.code=listing.code;
 
-    	if("address" in $scope.listings[index])
-    		$scope.address=$scope.listings[index].address;
+    	if("address" in listing)
+    		$scope.address=listing.address;
     	else
     		$scope.address="No available address";
 
-    	if("coordinates" in $scope.listings[index]){
-    		$scope.latitude=$scope.listings[index].coordinates.latitude;
-    		$scope.longitude=$scope.listings[index].coordinates.longitude;
+    	if("coordinates" in listing){
+    		$scope.latitude=listing.coordinates.latitude;
+    		$scope.longitude=listing.coordinates.longitude;
     	}
     	else {
     		$scope.latitude="No available latitude";
